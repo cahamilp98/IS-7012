@@ -1,0 +1,6 @@
+﻿Build started at 8:59 PM...
+1>------ Build started: Project: RecruitCatHamilcp, Configuration: Debug Any CPU ------
+1>  Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>  RecruitCatHamilcp -> C:\Users\carol\Documents\Schools\University of Cincinnati\2026\Fall\IS 7012\IS7012\RecruitCatHamilcp\RecruitCatHamilcp\bin\Debug\net10.0\RecruitCatHamilcp.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 8:59 PM and took 01.016 seconds ==========
