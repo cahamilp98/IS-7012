@@ -5,8 +5,11 @@ namespace OneonOneTest.Models
 {
     public class AccountHolder
     {
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
+        [DisplayName("Last Name")]  
         public string LastName { get; set; }
+        [DisplayName("Full Name")]
         public string FullName
         {
             get
@@ -22,6 +25,7 @@ namespace OneonOneTest.Models
         public string Email { get; set; }
         [DisplayName("Phone Number")]
         public string PhoneNumber { get; set; }
+        [DisplayName("Account Holder ID")]
         public int Id { get; set; }
     }
 }
