@@ -24,7 +24,9 @@ public class DeleteModel : PageModel
             return NotFound();
         }
 
-        var accountholder = await _context.AccountHolder.FirstOrDefaultAsync(m => m.Id == id);
+        var accountholder = await _context.AccountHolder
+            .Include (x => x.Id)
+            .FirstOrDefaultAsync(m => m.Id == id);
         if (accountholder is null)
         {
             return NotFound();
