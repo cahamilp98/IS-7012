@@ -52,3 +52,32 @@
     <a asp-page="./Edit" asp-route-id="@Model.AccountHolder.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
+@if (Model.AccountHolder.BankAccounts != null && Model.AccountHolder.BankAccounts.Any())
+{
+    <h2>Bank Accounts</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccountHolder.BankAccounts[0].AccountName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccountHolder.BankAccounts[0].CurrentBalance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccountHolder.BankAccounts[0].NumberofTransactions)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var account in Model.AccountHolder.BankAccounts)
+            {
+                <tr>
+                    <td>@account.AccountName</td>
+                    <td>@account.CurrentBalance</td>
+                    <td>@account.NumberofTransactions</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

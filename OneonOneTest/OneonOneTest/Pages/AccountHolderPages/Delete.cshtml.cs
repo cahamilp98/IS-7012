@@ -25,7 +25,6 @@ public class DeleteModel : PageModel
         }
 
         var accountholder = await _context.AccountHolder
-            .Include (x => x.Id)
             .FirstOrDefaultAsync(m => m.Id == id);
         if (accountholder is null)
         {
@@ -37,7 +36,7 @@ public class DeleteModel : PageModel
         }
 
         return Page();
-    }
+    }","explanation":"Remove invalid Include(x => x.Id) since Id is a scalar property and not a navigation; load entity by Id without Include."}```
 
     public async Task<IActionResult> OnPostAsync(int? id)
     {

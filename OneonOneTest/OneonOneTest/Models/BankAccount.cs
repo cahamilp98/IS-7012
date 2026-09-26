@@ -10,7 +10,10 @@ namespace OneonOneTest.Models
         public decimal CurrentBalance { get; set; }
         public string AccountName { get; set; }
         public int NumberofTransactions { get; set; }
-        public int AccountId { get; set; }
-        public List<BankAccount>? BankAccounts { get; set; }
+        public int Id { get; set; }
+
+        // Foreign key to AccountHolder
+        public int AccountHolderId { get; set; }
+        public AccountHolder? AccountHolder { get; set; }
     }
 }

@@ -33,5 +33,6 @@ namespace OneonOneTest.Models
         public string PhoneNumber { get; set; }
         [DisplayName("Account Holder ID")]
         public int Id { get; set; }
+        public List<BankAccount>? BankAccounts { get; set; }
     }
 }

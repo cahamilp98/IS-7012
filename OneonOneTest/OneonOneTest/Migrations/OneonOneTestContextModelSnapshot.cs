@@ -52,6 +52,57 @@ namespace OneonOneTest.Migrations
 
                     b.ToTable("AccountHolder");
                 });
+
+            modelBuilder.Entity("OneonOneTest.Models.BankAccount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountHolderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AccountNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("CurrentBalance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("NumberofTransactions")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OpeningDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountHolderId");
+
+                    b.ToTable("BankAccount");
+                });
+
+            modelBuilder.Entity("OneonOneTest.Models.BankAccount", b =>
+                {
+                    b.HasOne("OneonOneTest.Models.AccountHolder", "AccountHolder")
+                        .WithMany("BankAccounts")
+                        .HasForeignKey("AccountHolderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountHolder");
+                });
+
+            modelBuilder.Entity("OneonOneTest.Models.AccountHolder", b =>
+                {
+                    b.Navigation("BankAccounts");
+                });
 #pragma warning restore 612, 618
         }
     }
